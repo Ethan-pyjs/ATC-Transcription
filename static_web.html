@@ -1,0 +1,82 @@
+<DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>LiveATC Capture Control</title>
+      <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+      <div class="container">
+        <header>
+          <h1>LiveATC Capture Control</h1>
+          <p class="description">Capture and Transcribe ATC</p>
+        </header>
+        
+        <div class="control-panel">
+          <div class="card">
+            <div class="card-header">Source Configuration</div>
+            <div class="form-group">
+              <label for="url">Target URL:</label>
+              <input type="text" id="url" value="">
+            </div>
+            <div class="form-group">
+              <label for="selector">Play Button Selector:</label>
+              <input type="text" id="selector" value="button">
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-header">Email Settings</div>
+            <div class="form-group">
+              <label for="sender">Sender Email:</label>
+              <input type="email" id="sender" value="">
+            </div>
+            <div class="form-group">
+              <label for="receiver">Receiver Email:</label>
+              <input type="email" id="receiver" value="">
+            </div>
+            <div class="form-group">
+              <label for="password">App Password:</label>
+              <input type="password" id="password" value="">
+            </div>
+          </div>
+          
+          <div class="card">
+            <div class="card-header">Recording Settings</div>
+            <div class="form-group">
+              <label for="duration">Recording Duration (seconds):</label>
+              <input type="number" id="duration" min="5" max="300" value="30">
+            </div>
+            
+            <div class="form-group">
+              <label>Schedule Mode:</label>
+              <div class="schedule-controls">
+                <label class="switch">
+                  <input type="checkbox" id="schedule-toggle">
+                  <span class="slider"></span>
+                </label>
+                <span>Run on schedule</span>
+                <input type="number" id="interval" class="interval-input" min="1" max="1440" value="60">
+                <span>minutes</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="button-group">
+            <button id="start-btn" class="btn-primary">Start Single Capture</button>
+            <button id="stop-btn" class="btn-danger" disabled>Stop All Captures</button>
+          </div>
+          
+          <div class="status">
+            <div class="status-title">Status:</div>
+            <div id="status-message">Ready to start</div>
+            <div class="status-title">Activity Log:</div>
+            <div id="log" class="log"></div>
+          </div>
+        </div>
+      </div>
+    
+      <script src="script.js"></script>
+    </body>
+    </html>
